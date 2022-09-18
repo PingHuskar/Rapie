@@ -7,3 +7,7 @@ if (!link) {
     document.getElementsByTagName('head')[0].appendChild(link);
 }
 link.href = `https://unavatar.io/github/${searchParam.get('gh')}`
+
+TweenMax.from('#chart_div',1,{
+    x:0,y:0,scale:0,ease:Elastic.easeOut,delay:0.4
+})
