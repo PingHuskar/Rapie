@@ -26,7 +26,12 @@
         // console.log(df)
         if (searchParam.get('color') !== null) {
             for (let color of searchParam.get('color').split(',')) {
-                colors.push({color: `${color}`})
+                if (/[\da-f]{6}|[\da-f]{3}/.test(color)) {
+                  colors.push({ color: `#${color}` })
+                }
+                else {
+                  colors.push({ color: `${color}` })
+                }
             }
         }
         // console.log(colors)
