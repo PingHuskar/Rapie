@@ -27,26 +27,30 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th id="col1" contenteditable>Col1</th>
-                    <th id="col2" contenteditable>Col2</th>
-                    <th id="color">Color</th>
+                    <th id="col1" contenteditable oninput="main();">Category</th>
+                    <th id="col2" contenteditable oninput="main();">Amount</th>
+                    <th id="color" oninput="main();">Color</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td class="col1">a</td>
-                    <td class="col2">5</td>
-                    <td class="color">salmon</td>
+                    <td class="col1" contenteditable oninput="main();">a</td>
+                    <td class="col2" contenteditable oninput="main();">5</td>
+                    <td class="color" contenteditable oninput="main();">salmon</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td class="col1">r</td>
-                    <td class="col2">55</td>
-                    <td class="color">aqua</td>
+                    <td class="col1" contenteditable oninput="main();">r</td>
+                    <td class="col2" contenteditable oninput="main();">55</td>
+                    <td class="color" contenteditable oninput="main();">aqua</td>
                 </tr>
             </tbody>
         </table>
+        <div class="btngroup">
+            <a href="#" onclick="addlst()">Add a Row</a>
+            <a href="#" onclick="rmlst()">Remove last Row</a>
+        </div>
     </div>
 </body>
 </html>

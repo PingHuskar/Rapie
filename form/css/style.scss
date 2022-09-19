@@ -50,19 +50,33 @@ body {
         thead {
             tr {
                 th {
-                    
+                    border: 3px solid orangered;
                 }
             }
         }
         tbody {
             tr {
                 td {
+                    border: 2px solid orangered;
+                    &:first-child {
+                        font-weight: bold;
+                    }
                     &:nth-child(2) {
                         text-align: left;
+                        padding-left: 10px;
                     }
 
                 }
             }
+        }
+    }
+    .btngroup {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-top: 5vh;
+        a {
+            text-decoration: none;
         }
     }
 }
