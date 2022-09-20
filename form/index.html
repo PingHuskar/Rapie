@@ -10,19 +10,21 @@
 </head>
 <body>
     <div class="container">
-        <input type="url" name="" id="res" onclick="window.open(this.value)">
-        <ul>
-            <li>root : <span id="root" contenteditable oninput="main();">https://pinghuskar.github.io/Rapie/</span></li>
-            <li>title : <span id="title" contenteditable oninput="main();">Exmaple Pie Chart</span></li>
-            <li>bg : <span id="bg" contenteditable oninput="main();">white</span></li>
-            <li>width : <span id="width" contenteditable oninput="main();">400</span> px</li>
-            <li>height : <span id="height" contenteditable oninput="main();">300</span> px</li>
-            <li>bordercolor : <span id="bordercolor" contenteditable oninput="main();">none</span></li>
-            <li>font-size : <span id="fontSize" contenteditable oninput="main();">20</span></li>
-            <!-- <li>hole : <span id="hole" contenteditable oninput="main();">0</span></li> -->
-            <li>hole : <input type="range" id="hole" min="0" max="1" step="0.05" oninput="main();"></li>
-            <!-- <li>data : <span id="data" contenteditable oninput="main();"></span></li> -->
-        </ul>
+        <input type="url" name="" id="res" onclick="viz(this.value)">
+        <div>
+            <div>
+                <span>root : <span id="root" contenteditable oninput="main();"></span></span>
+                <span>title : <span id="title" contenteditable oninput="main();"></span></span>
+            </div>
+            <div>
+                <span>bg : <span id="bg" contenteditable oninput="main();"></span></span>
+                <span>width : <span id="width" contenteditable oninput="main();"></span> px</span>
+                <span>height : <span id="height" contenteditable oninput="main();"></span> px</span>
+                <span>bordercolor : <span id="bordercolor" contenteditable oninput="main();"></span></span>
+                <span>font-size : <span id="fontSize" contenteditable oninput="main();"></span></span>
+                <span>hole : <input type="range" id="hole" min="0" max="1" step="0.05" oninput="main();"></span>
+            </div>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -33,18 +35,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td class="col1" contenteditable oninput="main();">a</td>
-                    <td class="col2" contenteditable oninput="main();">5</td>
-                    <td class="color" contenteditable oninput="main();">salmon</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="col1" contenteditable oninput="main();">r</td>
-                    <td class="col2" contenteditable oninput="main();">55</td>
-                    <td class="color" contenteditable oninput="main();">aqua</td>
-                </tr>
             </tbody>
         </table>
         <div class="btngroup">

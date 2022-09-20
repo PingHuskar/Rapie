@@ -11,10 +11,11 @@
 body {
     min-height: 100vh;
     display: flex;
+    background: rgba($color: black, $alpha: 0.7);
 }
 
 .container {
-    background: rgba($color: #000000, $alpha: 0.3);
+    background: transparent;
     width: 100%;
     display: flex;
     // justify-content: center;
@@ -33,39 +34,73 @@ body {
             font-weight: bold;
         }
     }
-    ul {
-        margin-top: 1vh;
-        li {
+    // ul {
+    //     margin-top: 1vh;
+    //     li {
+    //         span {
+    //             min-width: 10px;
+    //             background: white;
+    //             width: 10%;
+    //             padding: 0 10px;
+    //         }
+    //     }
+    // }
+    div {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-flow: column;
+        margin-top: 2.5vh;
+        div {
+            flex-flow: row;
+            justify-content: space-around;
             span {
-                min-width: 10px;
-                background: white;
-                width: 10%;
-                padding: 0 10px;
+                color: white;
+                margin: 0 10px;
+                span {
+                    color: black;
+                    margin: 0 3px;
+                    padding: 0 10px;
+                    background: white;
+                }
             }
         }
     }
     table {
-        width: 80%;
+        max-width: 50%;
+        margin-top: 2.5vh;
         text-align: center;
         thead {
             tr {
+                background: white;
                 th {
                     border: 3px solid orangered;
+                    width: 5% !important;
+                    &:nth-child(2) {
+                        width: 10%;
+                    }
                 }
             }
         }
         tbody {
             tr {
+                &:nth-child(odd) {
+                    background: rgba($color: coral, $alpha: 0.4);
+                }
+                &:nth-child(even) {
+                    background: rgba($color: cyan, $alpha: 0.4);
+                }
                 td {
                     border: 2px solid orangered;
+                    width: 5%;
                     &:first-child {
                         font-weight: bold;
                     }
                     &:nth-child(2) {
+                        width: 10%;
                         text-align: left;
                         padding-left: 10px;
                     }
-
                 }
             }
         }
@@ -73,10 +108,19 @@ body {
     .btngroup {
         display: flex;
         justify-content: space-evenly;
+        flex-flow: row;
         width: 100%;
         margin-top: 5vh;
+        position: absolute;
+        bottom: 5vh;
         a {
             text-decoration: none;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 10px;
+            &:hover {
+                font-weight: bold;
+            }
         }
     }
 }

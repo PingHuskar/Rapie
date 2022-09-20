@@ -13,10 +13,11 @@
 body {
   min-height: 100vh;
   display: flex;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.3);
+  background: transparent;
   width: 100%;
   display: flex;
   align-items: center;
@@ -35,38 +36,75 @@ body {
 .container input[type=url]:hover {
   font-weight: bold;
 }
-.container ul {
-  margin-top: 1vh;
+.container div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: column;
+  margin-top: 2.5vh;
 }
-.container ul li span {
-  min-width: 10px;
-  background: white;
-  width: 10%;
+.container div div {
+  flex-flow: row;
+  justify-content: space-around;
+}
+.container div div span {
+  color: white;
+  margin: 0 10px;
+}
+.container div div span span {
+  color: black;
+  margin: 0 3px;
   padding: 0 10px;
+  background: white;
 }
 .container table {
-  width: 80%;
+  max-width: 50%;
+  margin-top: 2.5vh;
   text-align: center;
+}
+.container table thead tr {
+  background: white;
 }
 .container table thead tr th {
   border: 3px solid orangered;
+  width: 5% !important;
+}
+.container table thead tr th:nth-child(2) {
+  width: 10%;
+}
+.container table tbody tr:nth-child(odd) {
+  background: rgba(255, 127, 80, 0.4);
+}
+.container table tbody tr:nth-child(even) {
+  background: rgba(0, 255, 255, 0.4);
 }
 .container table tbody tr td {
   border: 2px solid orangered;
+  width: 5%;
 }
 .container table tbody tr td:first-child {
   font-weight: bold;
 }
 .container table tbody tr td:nth-child(2) {
+  width: 10%;
   text-align: left;
   padding-left: 10px;
 }
 .container .btngroup {
   display: flex;
   justify-content: space-evenly;
+  flex-flow: row;
   width: 100%;
   margin-top: 5vh;
+  position: absolute;
+  bottom: 5vh;
 }
 .container .btngroup a {
   text-decoration: none;
+  background: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+.container .btngroup a:hover {
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
