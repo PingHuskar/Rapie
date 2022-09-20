@@ -1,5 +1,4 @@
 const main = () => {
-    console.log("main() Trigger")
     const f1 = document.getElementsByClassName('col1')
     const f2 = document.getElementsByClassName('col2')
     const recordCount = f1.length
@@ -62,37 +61,64 @@ const main = () => {
     url.searchParams.set(`col2`, c2.innerText)
     url.searchParams.set(`color`, colorTemp.join(","))
     url.searchParams.set(`data`, dataTemp.join(","))
+    // console.log(url)
+    // console.log(url.search)
     history.pushState({}, '', url)  
-    
 }
-
+const appendRec = () => {
+    const f1 = document.getElementsByClassName('col1')
+    TweenMax.fromTo(`#rec${f1.length}`,0.1 , {
+        x: screen.width*1.5,autoAlpha:0,ease:Linear.easeNone
+    },{
+        x: 0,autoAlpha:1,ease:Linear.easeNone
+    })
+    setTimeout(main,100)
+    // main()
+}
 const addlst = () => {
-    var table = document.getElementsByTagName('table')[0];
-    var tbody = document.getElementsByTagName('tbody')[0];
+    var tbody = document.getElementsByTagName('tbody')[0]
     const f1 = document.getElementsByClassName('col1')
     const defaultValue = 1
     const charList = `abcdefghijklmnopqurstuwxyzABCDEFGHIJKLMNOPQURSTUWXYZ`
     // https://htmlcolorcodes.com/color-names/
     // var predefColor = ["IndianRed","LightCoral","Salmon","DarkSalmon","LightSalmon","Crimson","Red","FireBrick","DarkRed","Pink","LightPink","HotPink","DeepPink","MediumVioletRed","PaleVioletRed","LightSalmon","Coral","Tomato","OrangeRed","DarkOrange","Orange","Gold","Yellow","LightYellow","LemonChiffon","LightGoldenrodYellow","PapayaWhip","Moccasin","PeachPuff","PaleGoldenrod","Khaki","DarkKhaki","Lavender","Thistle","Plum","Violet","Orchid","Fuchsia","Magenta","MediumOrchid","MediumPurple","RebeccaPurple","BlueViolet","DarkViolet","DarkOrchid","DarkMagenta","Purple","Indigo","SlateBlue","DarkSlateBlue","MediumSlateBlue","GreenYellow","Chartreuse","LawnGreen","Lime","LimeGreen","PaleGreen","LightGreen","MediumSpringGreen","SpringGreen","MediumSeaGreen","SeaGreen","ForestGreen","Green","DarkGreen","YellowGreen","OliveDrab","Olive","DarkOliveGreen","MediumAquamarine","DarkSeaGreen","LightSeaGreen","DarkCyan","Teal","Aqua","Cyan","LightCyan","PaleTurquoise","Aquamarine","Turquoise","MediumTurquoise","DarkTurquoise","CadetBlue","SteelBlue","LightSteelBlue","PowderBlue","LightBlue","SkyBlue","LightSkyBlue","DeepSkyBlue","DodgerBlue","CornflowerBlue","MediumSlateBlue","RoyalBlue","Blue","MediumBlue","DarkBlue","Navy","MidnightBlue","Cornsilk","BlanchedAlmond","Bisque","NavajoWhite","Wheat","BurlyWood","Tan","RosyBrown","SandyBrown","Goldenrod","DarkGoldenrod","Peru","Chocolate","SaddleBrown","Sienna","Brown","Maroon","White","Snow","HoneyDew","MintCream","Azure","AliceBlue","GhostWhite","WhiteSmoke","SeaShell","Beige","OldLace","FloralWhite","Ivory","AntiqueWhite","Linen","LavenderBlush","MistyRose","Gainsboro","LightGray","Silver","DarkGray","Gray","DimGray","LightSlateGray","SlateGray","DarkSlateGray","Black"]
     var predefColor = ["indianred","lightcoral","salmon","darksalmon","lightsalmon","crimson","red","firebrick","darkred","pink","lightpink","hotpink","deeppink","mediumvioletred","palevioletred","lightsalmon","coral","tomato","orangered","darkorange","orange","gold","yellow","lightyellow","lemonchiffon","lightgoldenrodyellow","papayawhip","moccasin","peachpuff","palegoldenrod","khaki","darkkhaki","lavender","thistle","plum","violet","orchid","fuchsia","magenta","mediumorchid","mediumpurple","rebeccapurple","blueviolet","darkviolet","darkorchid","darkmagenta","purple","indigo","slateblue","darkslateblue","mediumslateblue","greenyellow","chartreuse","lawngreen","lime","limegreen","palegreen","lightgreen","mediumspringgreen","springgreen","mediumseagreen","seagreen","forestgreen","green","darkgreen","yellowgreen","olivedrab","olive","darkolivegreen","mediumaquamarine","darkseagreen","lightseagreen","darkcyan","teal","aqua","cyan","lightcyan","paleturquoise","aquamarine","turquoise","mediumturquoise","darkturquoise","cadetblue","steelblue","lightsteelblue","powderblue","lightblue","skyblue","lightskyblue","deepskyblue","dodgerblue","cornflowerblue","mediumslateblue","royalblue","blue","mediumblue","darkblue","navy","midnightblue","cornsilk","blanchedalmond","bisque","navajowhite","wheat","burlywood","tan","rosybrown","sandybrown","goldenrod","darkgoldenrod","peru","chocolate","saddlebrown","sienna","brown","maroon","white","snow","honeydew","mintcream","azure","aliceblue","ghostwhite","whitesmoke","seashell","beige","oldlace","floralwhite","ivory","antiquewhite","linen","lavenderblush","mistyrose","gainsboro","lightgray","silver","darkgray","gray","dimgray","lightslategray","slategray","darkslategray","black"]
-    var toRemoveColor = ["saddlebrown","cadetblue","aliceblue","deepskyblue","white","black"]
+    var toRemoveColor = ["saddlebrown","deeppink","moccasin","cadetblue","aliceblue","deepskyblue","white","black"]
     // https://stackoverflow.com/questions/19957348/remove-all-elements-contained-in-another-array
     predefColor = predefColor.filter( ( el ) => !toRemoveColor.includes( el ) )
-    tbody.innerHTML += `<tr>
-                    <td>${f1.length+1}</td>
-                    <td class="col1" contenteditable oninput="main();">${charList[Math.floor(Math.random()*charList.length)]}</td>
-                    <td class="col2" contenteditable oninput="main();">${defaultValue}</td>
-                    <td class="color" contenteditable oninput="main();">${predefColor[Math.floor(Math.random()*predefColor.length)]}</td>
-                </tr>`
-    main()
+    
+    setTimeout(appendRec, 50)
+    tbody.innerHTML += `<tr id="rec${f1.length+1}">
+        <td>${f1.length+1}</td>
+        <td class="col1" contenteditable oninput="main();">${charList[Math.floor(Math.random()*charList.length)]}</td>
+        <td class="col2" contenteditable oninput="main();">${defaultValue}</td>
+        <td class="color" contenteditable oninput="main();">${predefColor[Math.floor(Math.random()*predefColor.length)]}</td>
+    </tr>`
+    
+    
 }
+const removeRec = () => {
+    // console.log('removeRec')
+    var table = document.getElementsByTagName('table')[0]
+    var rowCount = table.rows.length
+    document.getElementsByTagName('table')[0].deleteRow(rowCount -1)
+    setTimeout(main,100)
+}
+
 const rmlst = () => {
     var table = document.getElementsByTagName('table')[0]
     var rowCount = table.rows.length
+    
     if (rowCount > 1) {
         console.log(table.rows[rowCount-1].innerText)
-        table.deleteRow(rowCount -1)
-        main()
+        setTimeout(removeRec, 50)
+        // console.log('animation')
+        const f1 = document.getElementsByClassName('col1')
+        TweenMax.fromTo(`#rec${f1.length}`,0.05 , {
+            x: 0,autoAlpha:1,ease:Linear.easeNone
+        },{
+            x: -screen.width*1.5,autoAlpha:0.1,ease:Linear.easeNone
+        })
     }
     else {
         alert('No Record to remove')
@@ -136,6 +162,12 @@ const prefilled = () => {
             <td class="color" contenteditable oninput="main();">${colors[i]}</td>
             </tr>`
         }
+        TweenMax.staggerFromTo('tr',0.1,{
+            x:screen.width*1.5,autoAlpha:0,ease:Linear.easeNone,delay:0.1
+        },{
+            x:0,autoAlpha:1,ease:Linear.easeNone,delay:0.1
+        },0.04)
+        setTimeout(main,100)
     }
     else {   
         addlst()

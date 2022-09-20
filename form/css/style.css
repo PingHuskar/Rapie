@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
   display: flex;
   background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
 
 .container {
@@ -27,35 +28,64 @@ body {
 .container:first-child {
   padding-top: 5vh;
 }
-.container input[type=url] {
-  width: 80%;
-  height: 5vh;
-  text-align: center;
-  font-weight: normal;
-}
-.container input[type=url]:hover {
-  font-weight: bold;
-}
-.container div {
+.container #menu {
   display: flex;
   justify-content: center;
   text-align: center;
   flex-flow: column;
   margin-top: 2.5vh;
 }
-.container div div {
+.container #menu .out {
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+.container #menu .out input[type=url] {
+  width: 80%;
+  height: 5vh;
+  align-items: center;
+  text-align: center;
+  font-weight: normal;
+}
+.container #menu .out input[type=url]:hover {
+  font-weight: bold;
+}
+.container #menu .config {
   flex-flow: row;
   justify-content: space-around;
+  line-height: 5vh;
 }
-.container div div span {
+.container #menu .config div span {
   color: white;
   margin: 0 10px;
+  text-transform: capitalize;
 }
-.container div div span span {
+.container #menu .config div span span {
+  text-transform: none;
   color: black;
   margin: 0 3px;
   padding: 0 10px;
   background: white;
+}
+.container #menu .config div span span:hover {
+  font-weight: bold;
+}
+.container #menu .btngroup {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row;
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  width: 100%;
+}
+.container #menu .btngroup a {
+  text-decoration: none;
+  background: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+.container #menu .btngroup a:hover {
+  font-weight: bold;
 }
 .container table {
   max-width: 50%;
@@ -71,6 +101,9 @@ body {
 }
 .container table thead tr th:nth-child(2) {
   width: 10%;
+}
+.container table tbody tr {
+  opacity: 0;
 }
 .container table tbody tr:nth-child(odd) {
   background: rgba(255, 127, 80, 0.4);
@@ -89,22 +122,4 @@ body {
   width: 10%;
   text-align: left;
   padding-left: 10px;
-}
-.container .btngroup {
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: row;
-  width: 100%;
-  margin-top: 5vh;
-  position: absolute;
-  bottom: 5vh;
-}
-.container .btngroup a {
-  text-decoration: none;
-  background: white;
-  padding: 5px 15px;
-  border-radius: 10px;
-}
-.container .btngroup a:hover {
-  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

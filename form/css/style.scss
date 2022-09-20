@@ -12,6 +12,7 @@ body {
     min-height: 100vh;
     display: flex;
     background: rgba($color: black, $alpha: 0.7);
+    overflow: hidden;
 }
 
 .container {
@@ -25,43 +26,63 @@ body {
     &:first-child {
         padding-top: 5vh;
     }
-    input[type=url] {
-        width: 80%;
-        height: 5vh;
-        text-align: center;
-        font-weight: normal;
-        &:hover {
-            font-weight: bold;
-        }
-    }
-    // ul {
-    //     margin-top: 1vh;
-    //     li {
-    //         span {
-    //             min-width: 10px;
-    //             background: white;
-    //             width: 10%;
-    //             padding: 0 10px;
-    //         }
-    //     }
-    // }
-    div {
+    #menu {
         display: flex;
         justify-content: center;
         text-align: center;
         flex-flow: column;
         margin-top: 2.5vh;
-        div {
+        .out {
+            justify-content: center;
+            margin-bottom: 2vh;
+            input[type=url] {
+                width: 80%;
+                height: 5vh;
+                align-items: center;
+                text-align: center;
+                font-weight: normal;
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+        .config {
             flex-flow: row;
             justify-content: space-around;
-            span {
-                color: white;
-                margin: 0 10px;
+            line-height: 5vh;
+            div {
                 span {
-                    color: black;
-                    margin: 0 3px;
-                    padding: 0 10px;
-                    background: white;
+                    color: white;
+                    margin: 0 10px;
+                    text-transform: capitalize;
+                    span {
+                        text-transform: none;
+                        color: black;
+                        margin: 0 3px;
+                        padding: 0 10px;
+                        background: white;
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        .btngroup {
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row;
+            position: absolute;
+            bottom: 5vh;
+            left: 0;
+            width: 100%;
+            a {
+                text-decoration: none;
+                background: white;
+                padding: 5px 15px;
+                border-radius: 10px;
+                &:hover {
+                    font-weight: bold;
                 }
             }
         }
@@ -84,6 +105,7 @@ body {
         }
         tbody {
             tr {
+                opacity: 0;
                 &:nth-child(odd) {
                     background: rgba($color: coral, $alpha: 0.4);
                 }
@@ -105,22 +127,5 @@ body {
             }
         }
     }
-    .btngroup {
-        display: flex;
-        justify-content: space-evenly;
-        flex-flow: row;
-        width: 100%;
-        margin-top: 5vh;
-        position: absolute;
-        bottom: 5vh;
-        a {
-            text-decoration: none;
-            background: white;
-            padding: 5px 15px;
-            border-radius: 10px;
-            &:hover {
-                font-weight: bold;
-            }
-        }
-    }
+    
 }
