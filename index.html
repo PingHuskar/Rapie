@@ -2,7 +2,12 @@
   <head>
     <script>
       if (location.search === '') {
-        location.href = `${location.origin}/form`
+        if (/\w+\.github\.io/.test(location.host)) {
+          location.href = `${location.origin}/Rapie/form`
+        }
+        else {
+          location.href = `${location.origin}/form`
+        }
       }
     </script>
     <!--Load the AJAX API-->
