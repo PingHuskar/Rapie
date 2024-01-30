@@ -52,18 +52,18 @@
 
         // Set chart options
         var options = {
-                    //    'title': searchParam.get("title"),
-                       'width': parseFloat(searchParam.get("w")) || 400,
-                       'height': parseFloat(searchParam.get("h")) || 300,
-                       fontName: 'Poppins',
-                       pieSliceBorderColor: searchParam.get("border") || 'none',
-                       legend: 'none',
-                       pieSliceText: 'label',
-                       backgroundColor: 'transparent',
-                       slices: colors,
-                       fontSize: searchParam.get("fz") || '20',
-                       pieHole: parseFloat(searchParam.get("hole")) || 0,
-                    };
+          //    'title': searchParam.get("title"),
+          'width': parseFloat(searchParam.get("w")) || 400,
+          'height': parseFloat(searchParam.get("h")) || 300,
+          fontName: 'Poppins',
+          pieSliceBorderColor: searchParam.get("border") || 'none',
+          legend: 'none',
+          pieSliceText: 'label',
+          backgroundColor: 'transparent',
+          slices: colors,
+          fontSize: searchParam.get("fz") || '20',
+          pieHole: parseFloat(searchParam.get("hole")) || 0,
+        };
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
@@ -74,13 +74,13 @@
   </head>
 
   <body>
-    <h1 id="chartTitle">Lorem</h1>
+    <h1 id="chartTitle">Untitled</h1>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
     <script src="https://cdn.jsdelivr.net/gh/PingHuskar/BackgroundColorChangerJS/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/easing/EasePack.min.js"></script>
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
   </body>
 </html>

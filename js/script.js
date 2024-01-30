@@ -1,4 +1,9 @@
-document.getElementById("chartTitle").innerText = searchParam.get('title') || "Rapie"
+const chartTitle = document.getElementById("chartTitle")
+if (searchParam.get('titlemode') == 'html') {
+    chartTitle.innerHTML = searchParam.get('title') || "Untitled"
+} else {
+    chartTitle.innerText = searchParam.get('title') || "Untitled"
+}
 
 var link = document.querySelector("link[rel~='icon']");
 if (!link) {
@@ -8,6 +13,10 @@ if (!link) {
 }
 link.href = `https://unavatar.io/github/${searchParam.get('gh')}`
 
-TweenMax.from('#chart_div',1,{
-    x:0,y:0,scale:0,ease:Elastic.easeOut,delay:0.4
-})
+TweenMax.from("#chart_div", 1, {
+  x: 0,
+  y: 0,
+  scale: 0,
+  ease: Elastic.easeOut,
+  delay: 0.4,
+});
